@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Js cookie</title>
+<meta name="viewport" content="initial-scale=1">
+</head>
+<body>
+<style type="text/css">
+	body {background: #afa; font-family: sans-serif;} a { color: #f00; background: #fff; }
+	.visible-mobile {	display: none; }
+	.button-mobile-site {
+		background: #fff;
+		color: #aaf;
+		text-align: center;
+		padding: 5px 0;
+		margin: 0;
+		font-size: 18px;
+		line-height: 1.5em;
+	}
+	.button-mobile-site a {
+		text-decoration: none;
+	}
+	@media (max-width: 767px) {
+		.visible-mobile {	display: block;	}
+	}
+</style>
+
+<div class="button-mobile-site visible-mobile">
+	<a class="js-cookie-mobile-remove" href="/m">To mobile site</a>
+</div>
+
+<h1>On "desktop"</h1>
+<h3><a class="js-cookie-mobile-remove" href="/m">Remove cookie and go to m/</a></h3>
+<h3>Dont miss to set proper user agent</h3>
+<a href="readme.md">README.md</a>
+
+
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/ismobile.js"></script>
+<script type="text/javascript" src="./js/cookie.js"></script>
+<script type="text/javascript">
+
+(isMobile.any() && !cookie.get('mobile')) ? RedirectIfMobile() : false;
+
+function RedirectIfMobile() {
+	if(!cookie.get('mobile') === true ) {
+		window.location = '/m';
+	} 
+}
+/*RedirectIfMobile();*/
+</script>
+
+</body>
+</html>
