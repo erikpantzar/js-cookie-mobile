@@ -1,3 +1,4 @@
+// source: http://www.abeautifulsite.net/detecting-mobile-devices-with-javascript/
 var isMobile = {
     Android: function() {
         return navigator.userAgent.match(/Android/i);
